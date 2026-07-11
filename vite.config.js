@@ -8,7 +8,7 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['apple-touch-icon.png'],
+      includeAssets: ['apple-touch-icon.png', 'favicon.ico', 'favicon-32.png'],
       manifest: {
         name: 'Pokémon Gym',
         short_name: 'Pokémon Gym',
