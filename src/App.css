@@ -358,11 +358,11 @@
 }
 
 .home-split-card.allenamento::before {
-  background: linear-gradient(158deg, #f8dcc2 0%, #f8dcc2 46%, transparent 46.5%);
+  background: linear-gradient(158deg, #fcefe4 0%, #fcefe4 46%, transparent 46.5%);
 }
 
 .home-split-card.storico::before {
-  background: linear-gradient(158deg, #d4ddf6 0%, #d4ddf6 46%, transparent 46.5%);
+  background: linear-gradient(158deg, #eaeffb 0%, #eaeffb 46%, transparent 46.5%);
 }
 
 .home-split-icon {
