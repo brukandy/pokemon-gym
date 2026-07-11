@@ -51,30 +51,26 @@ export default function InteractiveCard({ card, flipped, onFlip, badge, backHint
       onPointerUp={endGesture}
       onPointerLeave={endGesture}
       onPointerCancel={endGesture}
+      style={{
+        transform: `rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
+        transition: dragging ? 'none' : 'transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1)',
+      }}
     >
-      <div
-        className="card-tilt"
-        style={{
-          transform: `rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
-          transition: dragging ? 'none' : 'transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1)',
-        }}
-      >
-        <div className="card-face card-back">
-          <img src="/back-card.png" alt="Retro carta" />
-          {backHint && <p className="card-back-hint">{backHint}</p>}
-        </div>
-        <div className="card-face card-front">
-          {flipped && badge && <span className={`ribbon-badge ${badge.type}`}>{badge.text}</span>}
-          <img src={card.imageUrl} alt={card.name} loading="lazy" />
-          {flipped && (
-            <div
-              className="card-shine"
-              style={{
-                background: `radial-gradient(circle at ${50 + tilt.y * 2}% ${50 - tilt.x * 2}%, rgba(255,255,255,0.35), transparent 60%)`,
-              }}
-            />
-          )}
-        </div>
+      <div className="card-face card-back">
+        <img src="/back-card.png" alt="Retro carta" />
+        {backHint && <p className="card-back-hint">{backHint}</p>}
+      </div>
+      <div className="card-face card-front">
+        {flipped && badge && <span className={`ribbon-badge ${badge.type}`}>{badge.text}</span>}
+        <img src={card.imageUrl} alt={card.name} loading="lazy" />
+        {flipped && (
+          <div
+            className="card-shine"
+            style={{
+              background: `radial-gradient(circle at ${50 + tilt.y * 2}% ${50 - tilt.x * 2}%, rgba(255,255,255,0.35), transparent 60%)`,
+            }}
+          />
+        )}
       </div>
     </div>
   );
